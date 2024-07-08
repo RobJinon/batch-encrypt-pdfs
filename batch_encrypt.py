@@ -9,13 +9,19 @@ import pandas as pd
 root = tk.Tk()
 root.withdraw()
 
+def read_filename():
+    data = pd.read_csv("credentials.csv")
+    filenames = data['Filename'].astype(str).tolist()
+    return filenames
  
 path = filedialog.askdirectory()
 credentials = filedialog.askopenfile(filetypes = [('csv', '*.csv')], title="Select credentials file")
 
 OutputFolder="Output"
 
+# Returns a list of filenames (ex: ["FILENAME0.pdf", "FILENAME01.pdf"])
 pdfs=[ filename for filename in listdir(path) if filename.endswith(".pdf") ]
+filenames = read_filename()
 
 
 def read_password():
@@ -42,10 +48,11 @@ try:
 
         filename = pdf.replace('.pdf', '')
         
-        with Pdf.open(f"{path}/{pdf}", allow_overwriting_input=True) as pdffile:
-            pdffile.save(f"{path}/{pdf}",encryption = pikepdf.Encryption(owner=password, user=password, R=4))
+        if filename in filenames:
+            with Pdf.open(f"{path}/{pdf}", allow_overwriting_input=True) as pdffile:
+                pdffile.save(f"{path}/{pdf}",encryption = pikepdf.Encryption(owner=password, user=password, R=4))
 
-        counter += 1
+            counter += 1
 
     tk.messagebox.showinfo(title = "Success", message = "Files encrypted successfully")
 

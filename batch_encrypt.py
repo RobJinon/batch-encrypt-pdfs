@@ -43,7 +43,12 @@ try:
 
         filename = pdf.replace('.pdf', '')
         Data.append(f"{filename},{password}")
-    open("credentials.csv","a").writelines(s + '\n' for s in Data)
-    print("Files encrypted successfully.")
+
+    # open("credentials.csv","a").writelines(s + '\n' for s in Data)
+
+    tk.messagebox.showinfo(title = "Success", message = "Files encrypted successfully")
+    
 except Exception as error:
-    print("Error (" + str(type(error).__name__) + "): Files already encrypted.")
+    message = "Error (" + str(type(error).__name__) + "): Files already encrypted."
+
+    tk.messagebox.showwarning(title = "Error", message = message)

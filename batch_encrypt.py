@@ -34,16 +34,16 @@ def format_date(date):
     year = date[4:]
 
     return month+day+year
+try:
+    for pdf in pdfs:
+        password = generate_password(pdf)
 
+        with Pdf.open(f"{path}/{pdf}", allow_overwriting_input=True) as pdffile:
+            pdffile.save(f"{path}/{pdf}",encryption = pikepdf.Encryption(owner=password, user=password, R=4))
 
-for pdf in pdfs:
-    password = generate_password(pdf)
-
-    with Pdf.open(f"{path}/{pdf}", allow_overwriting_input=True) as pdffile:
-        pdffile.save(f"{path}/{pdf}",encryption = pikepdf.Encryption(owner=password, user=password, R=4))
-
-    filename = pdf.replace('.pdf', '')
-    Data.append(f"{filename},{password}")
-
-open("credentials.csv","a").writelines(s + '\n' for s in Data)
-print("Files encrypted successfully.")
+        filename = pdf.replace('.pdf', '')
+        Data.append(f"{filename},{password}")
+    open("credentials.csv","a").writelines(s + '\n' for s in Data)
+    print("Files encrypted successfully.")
+except Exception as error:
+    print("Error (" + str(type(error).__name__) + "): Files already encrypted.")

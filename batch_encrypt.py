@@ -41,20 +41,27 @@ def format_date(date):
 
     return month+day+year
 
-try:
-    counter = 0
-    for pdf in pdfs:
-        password = birthdays[counter]
+counter = 0
 
+try:
+    for pdf in pdfs:
         filename = pdf.replace('.pdf', '')
+        index = filenames.index(filename)
+
+        password = birthdays[index]
         
         if filename in filenames:
-            with Pdf.open(f"{path}/{pdf}", allow_overwriting_input=True) as pdffile:
-                pdffile.save(f"{path}/{pdf}",encryption = pikepdf.Encryption(owner=password, user=password, R=4))
+            try:
+                with Pdf.open(f"{path}/{pdf}", allow_overwriting_input=True) as pdffile:
+                    pdffile.save(f"{path}/{pdf}",encryption = pikepdf.Encryption(owner=password, user=password, R=4))
+                counter += 1
+            except:
+                continue
 
-            counter += 1
-
-    tk.messagebox.showinfo(title = "Success", message = "Files encrypted successfully")
+    if counter > 0:
+        tk.messagebox.showinfo(title = "Success", message = "Files encrypted successfully.")
+    else:
+        tk.messagebox.showinfo(title = "Success", message = "No files encrypted.")
 
 except Exception as error:
     message = "Error: " + str(type(error).__name__)

@@ -1,5 +1,4 @@
 from os import listdir
-from random import choice
 import pikepdf
 from pikepdf import Pdf
 import tkinter as tk
@@ -46,7 +45,11 @@ counter = 0
 try:
     for pdf in pdfs:
         filename = pdf.replace('.pdf', '')
-        index = filenames.index(filename)
+        
+        try:
+            index = filenames.index(filename)
+        except:
+            continue
 
         password = birthdays[index]
         
@@ -65,5 +68,7 @@ try:
 
 except Exception as error:
     message = "Error: " + str(type(error).__name__)
+    message = "Error: " + str(error)
+    
 
     tk.messagebox.showwarning(title = "Error", message = message)

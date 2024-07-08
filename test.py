@@ -18,6 +18,16 @@ def generate_password(filename):
     return ''.join([choice('0123456789') for i in range(8)])
 
 
+# Changes the format of the date from DDMMYYYY to MMDDYYYY
+def format_date(date):
+
+    day = date[:2]
+    month = date[2:4]
+    year = date[4:]
+
+    return month+day+year
+
+
 for pdf in pdfs:
     password = generate_password(pdf)
 

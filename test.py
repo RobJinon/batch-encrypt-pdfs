@@ -10,7 +10,12 @@ OutputFolder="Output"
 pdfs=[ filename for filename in listdir(path) if filename.endswith(".pdf") ]
 
 def generate_password(filename):
-    return ''.join(i for i in filename if i.isdigit())
+    strippedFilename = ''.join(i for i in filename if i.isdigit())
+
+    if strippedFilename.isdigit():
+        return strippedFilename
+    
+    return ''.join([choice('0123456789') for i in range(8)])
 
 
 for pdf in pdfs:

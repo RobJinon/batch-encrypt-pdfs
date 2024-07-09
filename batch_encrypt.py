@@ -17,7 +17,6 @@ def read_filename(credentials):
     
     except:
         data = pd.read_excel(credentials.name, dtype='object')
-        data.to_csv("./credentials.csv")
         filenames = data['Filename'].astype(str).tolist()
 
         return filenames
@@ -32,7 +31,6 @@ def read_password(credentials):
     
     except:
         data = pd.read_excel(credentials.name, dtype='object')
-        data.to_csv("./credentials.csv")
         filenames = data['Birthdate'].astype(str).tolist()
 
         return filenames

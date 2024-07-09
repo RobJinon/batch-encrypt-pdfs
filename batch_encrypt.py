@@ -26,7 +26,7 @@ def read_filename():
         filenames = data['Filename'].astype(str).tolist()
         return filenames
     except:
-        data = pd.read_excel(credentials.name)
+        data = pd.read_excel(credentials.name, dtype='object')
         data.to_csv("./credentials.csv")
         filenames = data['Filename'].astype(str).tolist()
         print(filenames)
@@ -41,7 +41,7 @@ def read_password():
         filenames = data['Birthdate'].astype(str).tolist()
         return filenames
     except:
-        data = pd.read_excel(credentials.name)
+        data = pd.read_excel(credentials.name, dtype='object')
         data.to_csv("./credentials.csv")
         filenames = data['Birthdate'].astype(str).tolist()
         print(filenames)

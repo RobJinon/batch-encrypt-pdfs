@@ -74,7 +74,7 @@ def encrypt_pdf(pdfs, filenames, birthdays, path):
                         pdffile.save(f"{path}/{pdf}",encryption = pikepdf.Encryption(owner=password, user=password, R=4))
                     counter += 1
 
-                    data.append(f"{filename}, {password}")
+                    data.append(f"'{filename}, '{password}")
                 except:
                     continue
 

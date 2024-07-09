@@ -1,7 +1,7 @@
 *.pdf
 *.csv
 Output/
-dist/
+
 build/
 test/
 *.spec

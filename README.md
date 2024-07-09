@@ -5,7 +5,7 @@ Developers: Robien Jinon, Limuelle Alamil <br />
 Description: This is a Python program that encrypts batch of files using `pikepdf` module.
 
 ## ❔ How to use (Users)
-1. Download the repository. If you can't access, ask for permission to be added as collaborator.
+1. Download the repository (https://github.com/RobJinon/batch-encrypt-pdfs). If you can't access, ask for permission to be added as collaborator.
 2. Download the executable (EXE) file `batch_encrypt.exe`.
 3. Before starting, make sure that you have 1) the <ins> files to be encrypted </ins> and 2) the <ins> CSV/XLSX file </ins> that contains the list of filenames and birthdate ready. Take note of their location in your File Manager as well to easily find them later. <br />
 ⚠️ NOTE: Make sure that the list of filenames in the CSV/XLSX file is coherent with the filenames of the actual files to be encrypted in the directory. <br />
@@ -15,7 +15,7 @@ Description: This is a Python program that encrypts batch of files using `pikepd
 6. Another file dialog asking to select a CSV/XLSX file will appear. This CSV/XLSX file is where the filenames and birthdate data are stored.
 
 ## ❓ How to use (Developers)
-1. Clone the repository to your local device. If you can't access, ask for permission to be added as collaborator.
+1. Clone the repository (https://github.com/RobJinon/batch-encrypt-pdfs) to your local device. If you can't access, ask for permission to be added as collaborator.
 2. The repository contains several files: <br />
    `.gitignore` - This file contains the files and directories that is not included when pushing changes to the repo.<br />
    `README.md` - This file contains documentation.<br />

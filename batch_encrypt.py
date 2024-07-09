@@ -5,29 +5,49 @@ import tkinter as tk
 from tkinter import filedialog
 import pandas as pd
 
-root = tk.Tk()
-root.withdraw()
 
-def read_filename():
-    data = pd.read_csv("credentials.csv")
-    filenames = data['Filename'].astype(str).tolist()
-    return filenames
+root = tk.Tk()  # Initializes Tkinter module
+root.withdraw() # Hide root window
+
  
+# opens a dialog input to select a directory and credentials
 path = filedialog.askdirectory()
-credentials = filedialog.askopenfile(filetypes = [('csv', '*.csv')], title="Select credentials file")
+credentials = filedialog.askopenfile(filetypes = [('All files', '*'),('.csv', '*.csv'), ('.xlsx', '*.xlsx')], title="Select credentials file")
 
-OutputFolder="Output"
 
-# Returns a list of filenames (ex: ["FILENAME0.pdf", "FILENAME01.pdf"])
-pdfs=[ filename for filename in listdir(path) if filename.endswith(".pdf") ]
+# Returns a list of filenames (ex: ["FILENAME0.pdf", "FILENAME01.pdf"]) based on the files in the directory
+pdfs = [filename for filename in listdir(path) if filename.endswith(".pdf")]
+
+
+# Reads filenames from the credentials file (csv)
+def read_filename():
+    try: 
+        data = pd.read_csv(credentials.name)
+        filenames = data['Filename'].astype(str).tolist()
+        return filenames
+    except:
+        data = pd.read_excel(credentials.name)
+        data.to_csv("./credentials.csv")
+        filenames = data['Filename'].astype(str).tolist()
+        print(filenames)
+        return filenames
+
+# Returns a list of filenames (ex: ["FILENAME", "FILENAME"]) based on the credentials file (csv)
 filenames = read_filename()
 
-
 def read_password():
-    data = pd.read_csv(credentials)
-    birthdays = data['Birthdate'].astype(str).tolist()
-    return birthdays
+    try: 
+        data = pd.read_csv(credentials.name)
+        filenames = data['Birthdate'].astype(str).tolist()
+        return filenames
+    except:
+        data = pd.read_excel(credentials.name)
+        data.to_csv("./credentials.csv")
+        filenames = data['Birthdate'].astype(str).tolist()
+        print(filenames)
+        return filenames
 
+# Returns a list of birthdays (string) which will serve as the password
 birthdays = read_password()
 
 

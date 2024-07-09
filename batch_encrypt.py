@@ -4,6 +4,7 @@ from pikepdf import Pdf
 import tkinter as tk
 from tkinter import filedialog
 import pandas as pd
+import os
 
 # Reads filenames from the credentials file (csv)
 def read_filename(credentials):
@@ -82,7 +83,7 @@ def encrypt_pdf(pdfs, filenames, birthdays, path):
         else:
             tk.messagebox.showinfo(title = "Success", message = "No files encrypted.")
 
-        open("credentials_backup.csv", "w").writelines(s + '\n' for s in data)
+        open(os.path.join(path , "credentials_backup.csv"), "w").writelines(s + '\n' for s in data)
 
     except Exception as error:
         message = "Error: " + str(type(error).__name__)

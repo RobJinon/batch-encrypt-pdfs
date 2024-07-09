@@ -4,6 +4,8 @@
 Developers: Robien Jinon, Limuelle Alamil <br />
 Description: This is a Python program that encrypts batch of files using `pikepdf` module. It asks for two inputs: 1) directory of files to be encrypted and 2) spreadsheet containing the data which will be used to encrypt the files.
 
+[Download Batch File Encrypter v1](https://github.com/RobJinon/batch-encrypt-pdfs/blob/main/dist/batch_encrypt.exe)
+
 ## ❔ How to use (Users)
 1. Download the repository (https://github.com/RobJinon/batch-encrypt-pdfs). If you can't access, ask for permission to be added as collaborator.<br /><br />
 ![image](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/81c6e276-25d1-4d5c-a76c-de34c6e48bce)

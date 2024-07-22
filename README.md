@@ -6,7 +6,7 @@ Description: This is a Python program that encrypts batch of files using `pikepd
 
 [Download Batch File Encrypter v1](https://github.com/RobJinon/batch-encrypt-pdfs/blob/main/dist/batch_encrypt.exe)
 
-## ❔ How to use (for end sers)
+## ❔ How to use (for end users)
 1. Download the repository (https://github.com/RobJinon/batch-encrypt-pdfs). If you can't access the repository, ask for permission to be added as collaborator.<br /><br />
 ![image](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/81c6e276-25d1-4d5c-a76c-de34c6e48bce)
 
@@ -15,19 +15,19 @@ Description: This is a Python program that encrypts batch of files using `pikepd
 
 3. Before starting, make sure that you have <br />
    - the <ins> files to be encrypted </ins> <br />
-   - the <ins> CSV/XLSX file </ins> <br />
-that contains the list of filenames and birthdate ready. Take note of their location in your File Manager as well to easily find them later. <br /><br />
-![image](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/19f3bdd5-2410-4ba8-b895-63079da82861)
-![image](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/9525b5b2-7a10-499b-8f82-140562ee8f97)
+   ![image](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/19f3bdd5-2410-4ba8-b895-63079da82861)
+   - the <ins> CSV/XLSX file </ins> that contains the list of filenames and birthdate ready. Take note of their location in your File Manager as well to easily find them later. <br />
+   ![image](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/9525b5b2-7a10-499b-8f82-140562ee8f97)
 
 ⚠️ NOTE: Make sure that the list of filenames in the CSV/XLSX file is coherent with the filenames of the actual files to be encrypted in the directory. <br />
+⚠️ NOTE: Make sure that the filename and birthdate columns have headers that are named "Filename" and "Birthdate" exactly (see image above) to avoid errors. <br />
 ⚠️ NOTE: Make sure that the files to be encrypted are all in the same directory. The CSV/XLSX file can be stored anywhere.<br />
 
 4. Double click the EXE file to start the program.<br />
 5. A file dialog asking to select a directory will appear. Select the directory where the files to be encrypted is located.<br /><br />
 ![image](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/e9d8cd6e-a89b-450a-896b-92f08f667f26)
 
-6. Another file dialog asking to select a CSV/XLSX file will appear. This CSV/XLSX file is where the filenames and birthdate data are stored.<br /><br />
+6. Another file dialog asking to select a CSV/XLSX file will appear. This CSV/XLSX file is where the list of filenames and birthdate are stored.<br /><br />
 ![image](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/c6aff41e-af17-47cc-a8a4-883039375f6e)
 
 7. If the encryption is successful, a toast like the one below will appear. Click OK.<br /><br />

@@ -16,11 +16,11 @@ Description: This is a Python program that encrypts batch of files using `pikepd
 3. Before starting, make sure that you have <br />
    - the <ins> files to be encrypted </ins> <br />
    ![image](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/19f3bdd5-2410-4ba8-b895-63079da82861)
-   - the <ins> CSV/XLSX file </ins> that contains the list of filenames and birthdate ready. Take note of their location in your File Manager as well to easily find them later. <br />
+   - the <ins> CSV/XLSX file </ins> that contains the list of filenames and birthdate ready; the filename refers to the file to be encrypted and the birthdate refers to its password  <br />
    ![image](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/9525b5b2-7a10-499b-8f82-140562ee8f97)
 
 ⚠️ NOTE: Make sure that the list of filenames in the CSV/XLSX file is coherent with the filenames of the actual files to be encrypted in the directory. <br />
-⚠️ NOTE: Make sure that the filename and birthdate columns have headers that are named "Filename" and "Birthdate" exactly (see image above) to avoid errors. <br />
+⚠️ NOTE: Make sure that the filename and birthdate columns in the CSV/XLSX file have headers that are named "Filename" and "Birthdate" exactly (see image above) to avoid errors. <br />
 ⚠️ NOTE: Make sure that the files to be encrypted are all in the same directory. The CSV/XLSX file can be stored anywhere.<br />
 
 4. Double click the EXE file to start the program.<br />
@@ -32,6 +32,8 @@ Description: This is a Python program that encrypts batch of files using `pikepd
 
 7. If the encryption is successful, a toast like the one below will appear. Click OK.<br /><br />
 ![Screenshot 2024-07-09 134744](https://github.com/RobJinon/batch-encrypt-pdfs/assets/98687205/9a7a701c-4e7e-482b-b763-a78fc813ef50)
+
+8. You can try to open the files to see if the encryption actually works.
 
 
 
